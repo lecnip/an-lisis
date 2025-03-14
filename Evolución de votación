@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+
+# Datos
+años = [1992, 1996, 2000, 2004, 2008, 2012, 2016, 2021]
+ps = [15, 14, 13, 16, 15, 12, 11, 10]
+ppd = [12, 11, 10, 9, 8, 7, 6, 5]
+dc = [30, 28, 25, 22, 20, 18, 15, 12]
+pcch = [4, 5, 6, 7, 8, 9, 10, 13]
+fa = [None, None, None, None, None, None, 5, 9]  # FA desde 2016
+
+# Crear gráfico
+plt.figure(figsize=(12, 7))
+plt.plot(años, ps, label='PS', marker='o')
+plt.plot(años, ppd, label='PPD', marker='o')
+plt.plot(años, dc, label='DC', marker='o')
+plt.plot(años, pcch, label='PCCh', marker='o')
+plt.plot(años, fa, label='FA', marker='o', linestyle='--')  # Línea discontinua para FA
+
+# Añadir títulos y etiquetas
+plt.title('Evolución de votación (1992-2021)')
+plt.xlabel('Año')
+plt.ylabel('Porcentaje de votación')
+plt.legend()
+plt.grid(True)
+
+# Ajustar el eje X para mostrar todos los años
+plt.xticks(años)
+
+# Mostrar gráfico
+plt.show()
